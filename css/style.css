@@ -1,15 +1,24 @@
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-image: url(../img/coolbackgrounds-topography-gulf.svg);
             background-repeat: no-repeat;
             background-size: cover;
-            background-position:-700px 0px
+            background-position: -700px 0px
         }
+
         body::-webkit-scrollbar {
             display: none;
         }
 
-        .navbar-brand  img {
+        .navbar-brand img {
             width: 50px;
+        }
+
+        .transition {
+            transition: all 0.5s;
         }
 
         /* shape atas */
@@ -167,4 +176,61 @@
 
         .bg3 {
             background-image: url(../img/logo_ayobelajar.jpg);
+        }
+
+        .timeline-left,
+        .timeline-right {
+            opacity: 0;
+            transform: translateX(0);
+            transition: all 0.6s ease;
+        }
+
+        /* Animasi muncul dari kiri */
+        .timeline-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        /* Animasi muncul dari kanan */
+        .timeline-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .project-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
+            will-change: opacity, transform;
+        }
+
+        .project-item.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
