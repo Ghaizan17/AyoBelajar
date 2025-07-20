@@ -282,3 +282,10 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+
+        .bg-orang5 {
+            background-image: url(../img/bg-orang5.jpeg);
+            background-size: cover;
+            background-position: center;
+        }
